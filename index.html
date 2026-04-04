@@ -5,48 +5,75 @@
 
     <style>
         body {
-            font-family: Arial;
             margin: 0;
-            background: #0f172a;
-            color: #e2e8f0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #020617, #0f172a);
+            color: white;
+            scroll-behavior: smooth;
         }
 
         header {
             text-align: center;
-            padding: 50px;
-            background: #1e293b;
+            padding: 80px 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        #typing {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .btn {
+            margin: 10px;
+            padding: 10px 15px;
+            background: #38bdf8;
+            color: black;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
         }
 
         section {
-            padding: 40px;
-            max-width: 900px;
+            padding: 50px 20px;
+            max-width: 1000px;
             margin: auto;
         }
 
         h2 {
-            border-bottom: 2px solid #38bdf8;
-            padding-bottom: 5px;
+            border-left: 4px solid #38bdf8;
+            padding-left: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .card {
-            background: #1e293b;
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
             padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
+            transition: 0.4s;
         }
 
-        a {
-            color: #38bdf8;
-            text-decoration: none;
+        .card:hover {
+            transform: scale(1.05);
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 12px;
-            background: #38bdf8;
-            color: black;
-            border-radius: 5px;
+        .fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 1s;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -55,92 +82,99 @@
 
 <header>
     <h1>Shree Sinha</h1>
-    <p>Data Science Undergraduate | Aspiring Data Scientist</p>
-    <p>
-        📧 shreesinha20@gmail.com |
-        <a href="https://www.linkedin.com/in/shree-sinha-b607b531a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a> |
-        <a href="https://github.com/shree895">GitHub</a>
-    </p>
+    <p id="typing"></p>
+
+    <a class="btn" href="MyResume.pdf_63.pdf" target="_blank">Resume</a>
+    <a class="btn" href="https://github.com/shree895" target="_blank">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/shree-sinha-b607b531a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
 </header>
 
-<section>
+<section class="fade">
     <h2>About Me</h2>
-    <div class="card">
-        <p>
-            Motivated Computer Science undergraduate specializing in Data Science,
-            with strong foundations in Python, data analysis, machine learning,
-            and database systems.
-        </p>
-    </div>
+    <p>I am a Data Science undergraduate passionate about machine learning, analytics, and solving real-world problems.</p>
 </section>
 
-<section>
-    <h2>Resume</h2>
-    <div class="card">
-        <p>You can view or download my resume below:</p>
-        <a class="btn" href="MyResume.pdf_63.pdf">Download Resume</a>
-    </div>
-</section>
-
-<section>
+<section class="fade">
     <h2>Projects</h2>
+    <div class="grid">
 
-    <div class="card">
-        <h3>Job Resume Skill Matcher</h3>
-        <p>Matches resumes with job descriptions using data processing techniques.</p>
-        <a href="https://github.com/shree895/Job-Resume-Skill-Matcher">View Project</a>
-    </div>
+        <div class="card">
+            <h3>Resume Skill Matcher</h3>
+            <p>Matches resumes with job descriptions using NLP.</p>
+            <a class="btn" href="https://github.com/shree895/Job-Resume-Skill-Matcher">View</a>
+        </div>
 
-    <div class="card">
-        <h3>Zomato Data Analysis (EDA)</h3>
-        <p>Analyzed restaurant pricing, ratings, and customer preferences.</p>
-        <a href="https://github.com/shree895/Zomato-EDA">View Project</a>
-    </div>
+        <div class="card">
+            <h3>Zomato EDA</h3>
+            <p>Analyzed restaurant data patterns.</p>
+            <a class="btn" href="https://github.com/shree895/Zomato-EDA">View</a>
+        </div>
 
-    <div class="card">
-        <h3>Amazon E-commerce Sales Analysis</h3>
-        <p>Identified revenue trends and customer behavior patterns.</p>
-        <a href="https://github.com/shree895/Amazon_Ecommerce_Sales_Analysis">View Project</a>
-    </div>
+        <div class="card">
+            <h3>Amazon Sales Analysis</h3>
+            <p>Extracted revenue insights.</p>
+            <a class="btn" href="https://github.com/shree895/Amazon_Ecommerce_Sales_Analysis">View</a>
+        </div>
 
-    <div class="card">
-        <h3>Student Performance Prediction</h3>
-        <p>Built ML model to predict student performance using Scikit-learn.</p>
-        <a href="https://github.com/shree895/student-performance-ml">View Project</a>
-    </div>
+        <div class="card">
+            <h3>Student Performance</h3>
+            <p>ML model for predictions.</p>
+            <a class="btn" href="https://github.com/shree895/student-performance-ml">View</a>
+        </div>
 
-</section>
-
-<section>
-    <h2>Publications</h2>
-    <div class="card">
-        <p>No publications yet. (Can be updated in future)</p>
     </div>
 </section>
 
-<section>
+<section class="fade">
     <h2>Certifications</h2>
-
-    <div class="card">
-        <p><b>Internshala Data Science Certification</b></p>
+    <div class="grid">
+        <div class="card">Internshala Data Science</div>
+        <div class="card">Deloitte Data Analytics</div>
+        <div class="card">BCG Data Science</div>
     </div>
-
-    <div class="card">
-        <p><b>Deloitte Data Analytics Virtual Experience</b></p>
-    </div>
-
-    <div class="card">
-        <p><b>BCG Data Science Virtual Experience</b></p>
-    </div>
-
 </section>
 
-<section>
+<section class="fade">
     <h2>Contact</h2>
-    <div class="card">
-        <p>Email: shreesinha20@gmail.com</p>
-    </div>
+    <p>Email: shreesinha20@gmail.com</p>
 </section>
+
+<script>
+    // Typing effect
+    let text = ["Aspiring Data Scientist", "Machine Learning Enthusiast", "Data Analyst"];
+    let i = 0, j = 0, current = "", isDeleting = false;
+
+    function type() {
+        current = text[i];
+        document.getElementById("typing").innerHTML =
+            current.substring(0, j);
+
+        if (!isDeleting && j < current.length) {
+            j++;
+            setTimeout(type, 100);
+        } else if (isDeleting && j > 0) {
+            j--;
+            setTimeout(type, 50);
+        } else {
+            isDeleting = !isDeleting;
+            if (!isDeleting) i = (i + 1) % text.length;
+            setTimeout(type, 1000);
+        }
+    }
+
+    type();
+
+    // Scroll animation
+    let faders = document.querySelectorAll('.fade');
+    window.addEventListener('scroll', () => {
+        faders.forEach(el => {
+            let position = el.getBoundingClientRect().top;
+            if (position < window.innerHeight - 100) {
+                el.classList.add('show');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
